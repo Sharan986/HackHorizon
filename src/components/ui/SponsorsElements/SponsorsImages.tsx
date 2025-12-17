@@ -11,7 +11,6 @@ import codeComputeSociety from '@/assets/images/CodeComputeSociety.png';
 import keychainlogo from '@/assets/svg/keyChainLogo.svg';
 // import keplologo from "@/assets/images/keploLogo.png" // TODO: Add keploLogo.png to assets
 // import givemycertificate from "@/assets/images/givemycertficateLogo.png"; // TODO: Add givemycertficateLogo.png to assets
-// import MlhLogoSponsers from '@/assets/svg/MlhLogo1.svg'; // TODO: Add MlhLogo1.svg to assets
 
 export function Planks() {
   return (
@@ -100,15 +99,6 @@ export function Keychainlogo() {
     </div>
   );
 }
-
-// TODO: Uncomment when MlhLogo1.svg is added
-// export function MlhLogoSponser() {
-//   return (
-//     <div className='max-w-[80%]'>
-//       <Image src={MlhLogoSponsers} alt="ETHIndia Sponsor" draggable={false} className='scale-80' />
-//     </div>
-//   );
-// }
 
 // TODO: Uncomment when keploLogo.png is added
 // export function Keplologo() {

@@ -27,7 +27,6 @@ const sponsors4 = [
 ];
 
 const sponsors5 = [
-  // { image: MlhLogoSponser, alt: 'Mlh Logo Sponsor' }, // TODO: Add MlhLogo1.svg
   // { image: UdchaloImage, alt: 'Sponsor 2' },
   // { image: UdchaloImage, alt: 'Sponsor 3' },
 ];

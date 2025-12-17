@@ -65,17 +65,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="w-full absolute bottom-0 px-4 sm:px-8 md:px-12 lg:px-20 py-3 md:py-4 border-t-2 border-[#FFFFFF1F] z-10 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 bg-black/20 backdrop-blur-sm">
-        <div className="text-white font-sans flex gap-2 items-center text-sm sm:text-base md:text-lg lg:text-xl order-1 md:order-1">
-          {/* <div className="h-6 w-6 md:h-8 md:w-8 border-10 bg-[#3AFFA3] border-[#3A614F] rounded-full" /> */}
-          <Link href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md" target="_blank" rel="noopener noreferrer" className=" hover:text-yellow-300 transition-colors ">
-            MLH Code of Conduct
-          </Link>
+        <div className="text-white font-sans text-xs sm:text-sm md:text-base lg:text-xl text-center order-1 md:order-1">
+          Made with ❤️ by GDG On Campus AJU
         </div>
-        <div className="text-white font-sans text-xs sm:text-sm md:text-base lg:text-xl text-center order-3 md:order-2">
-          Made with ❤️ by Open Source Software Club
-
-        </div>
-        <div className="text-white font-sans flex text-lg sm:text-xl md:text-2xl lg:text-xl gap-3 sm:gap-4 md:gap-5 order-2 md:order-3">
+        <div className="text-white font-sans flex text-lg sm:text-xl md:text-2xl lg:text-xl gap-3 sm:gap-4 md:gap-5 order-2 md:order-2">
           <Link
             href="mailto:innerve@aitpune.edu.in"
             target="_blank"
