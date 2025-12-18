@@ -5,12 +5,12 @@ import DividerButtonImg from "@/assets/svg/DividerButton.svg";
 
 export default function PrizePoolCard() {
   return (
-    <div className="w-full flex flex-col justify-center items-center overflow-hidden">
-      <div className="w-full">
+    <div className="w-screen flex flex-col justify-center items-center">
+      <div className="w-screen">
         <Image 
           src={PrizeRevealedSoon} 
           alt="Prize Revealed Soon" 
-          className="w-full h-auto"
+          className="w-full h-auto object-cover"
           priority
           draggable={false}
         />

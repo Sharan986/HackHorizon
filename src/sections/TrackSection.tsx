@@ -3,19 +3,15 @@ import Image from "next/image";
 import TrackBgImg from "../assets/webp/tracks/TrackBgImg.png"
 import TrackBgImgUpper from "../assets/webp/tracks/TrackBgImgUpper.webp"
 import TrackCard from "@/components/ui/TracksElements/TrackCard";
-import TrackHealthImg from "../assets/svg/Traks/TrackHealth.svg"
+import AgricultureImg from "../assets/svg/Traks/agriculture.svg"
+import GovernanceImg from "../assets/svg/Traks/Governance.svg"
+import CityImg from "../assets/svg/Traks/city.svg"
+import CommunityImg from "../assets/svg/Traks/community.svg"
+import HealthImg from "../assets/svg/Traks/health.svg"
+import EnvironmentImg from "../assets/svg/Traks/environment.svg"
 import BlueCornerImg from "../assets/svg/Traks/BlueCorner.svg"
 import OrangeCornerImg from "../assets/svg/Traks/OrangeCornerImg.svg"
 import PurpleCornerImg from "../assets/svg/Traks/PurpleCornerImg.svg"
-import TrackArVr from "../assets/svg/Traks/TrackArVr.svg"
-import TrackEduTech from "../assets/svg/Traks/TrackEduTech.svg"
-import TrackFinTech from "../assets/svg/Traks/TrackFinTech.svg"
-import TrackGameDev from "../assets/svg/Traks/TrackGameDev.svg"
-import TrackCyberSec from "../assets/svg/Traks/TrackCyber.svg"
-import TrackBlockChain from "../assets/svg/Traks/TracksBlockChain.svg"
-import TrackLogistics from "../assets/svg/Traks/TrackLogistics.svg"
-import TrackEcoTech from "../assets/svg/Traks/TrackEcoTech.svg"
-import DefenceLogo from "../assets/svg/Traks/Defence.svg"
 import TrackButton from "@/components/ui/TracksElements/TrackButton";
 import Galaxy from "@/components/ui/TracksElements/Glaxy";
 import { useEffect, useState } from "react";
@@ -25,74 +21,74 @@ const TRACKS_CARDS_DATA = [
         BgColor: "bg-[#2860BC]",
         BC1: "border-[#579BEC]",
         BC2: "border-[#FFBF64]",
-        Logo: TrackHealthImg,
+        Logo: AgricultureImg,
         CornerImg: BlueCornerImg,
-        Title: "Health"
+        Title: "Agriculture and Food"
     },
     {
         BgColor: "bg-[#E4630E]",
         BC1: "border-[#FFDC53]",
         BC2: "border-[#FBC3C1]",
-        Logo: TrackArVr,
+        Logo: GovernanceImg,
         CornerImg: OrangeCornerImg,
-        Title: "AR/VR"
+        Title: "Governance and Civic Tech"
     },
     {
         BgColor: "bg-[#CA4CFA]",
         BC1: "border-[#E6ADFD]",
         BC2: "border-[#FFBF64]",
-        Logo: TrackEduTech,
+        Logo: CityImg,
         CornerImg: PurpleCornerImg,
-        Title: "EduTech"
+        Title: "Cities and Infrastructure"
     },
     {
         BgColor: "bg-[#2860BC]",
         BC1: "border-[#579BEC]",
         BC2: "border-[#FFBF64]",
-        Logo: TrackGameDev,
+        Logo: CommunityImg,
         CornerImg: BlueCornerImg,
-        Title: "GameDev"
+        Title: "Community and Social Impact"
     },
     {
         BgColor: "bg-[#E4630E]",
         BC1: "border-[#FFDC53]",
         BC2: "border-[#FBC3C1]",
-        Logo: TrackFinTech,
+        Logo: HealthImg,
         CornerImg: OrangeCornerImg,
-        Title: "FinTech"
+        Title: "Health and Wellness"
     },
     {
         BgColor: "bg-[#CA4CFA]",
         BC1: "border-[#E6ADFD]",
         BC2: "border-[#FFBF64]",
-        Logo: TrackCyberSec,
+        Logo: EnvironmentImg,
         CornerImg: PurpleCornerImg,
-        Title: "CyberSec"
+        Title: "Environment and Sustainability"
     },
-    {
-        BgColor: "bg-[#2860BC]",
-        BC1: "border-[#579BEC]",
-        BC2: "border-[#FFBF64]",
-        Logo: TrackBlockChain,
-        CornerImg: BlueCornerImg,
-        Title: "BlockChain"
-    },
-    {
-        BgColor: "bg-[#E4630E]",
-        BC1: "border-[#FFDC53]",
-        BC2: "border-[#FBC3C1]",
-        Logo: TrackLogistics,
-        CornerImg: OrangeCornerImg,
-        Title: "Logistics"
-    },
-    {
-        BgColor: "bg-[#CA4CFA]",
-        BC1: "border-[#E6ADFD]",
-        BC2: "border-[#FFBF64]",
-        Logo: DefenceLogo,
-        CornerImg: PurpleCornerImg,
-        Title: "Defence"
-    }
+    // {
+    //     BgColor: "bg-[#2860BC]",
+    //     BC1: "border-[#579BEC]",
+    //     BC2: "border-[#FFBF64]",
+    //     Logo: TrackBlockChain,
+    //     CornerImg: BlueCornerImg,
+    //     Title: "BlockChain"
+    // },
+    // {
+    //     BgColor: "bg-[#E4630E]",
+    //     BC1: "border-[#FFDC53]",
+    //     BC2: "border-[#FBC3C1]",
+    //     Logo: TrackLogistics,
+    //     CornerImg: OrangeCornerImg,
+    //     Title: "Logistics"
+    // },
+    // {
+    //     BgColor: "bg-[#CA4CFA]",
+    //     BC1: "border-[#E6ADFD]",
+    //     BC2: "border-[#FFBF64]",
+    //     Logo: DefenceLogo,
+    //     CornerImg: PurpleCornerImg,
+    //     Title: "Defence"
+    // }
 ]
 
 export default function TrackSection() {
