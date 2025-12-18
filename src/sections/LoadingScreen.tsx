@@ -1,14 +1,12 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useState, useEffect, useRef } from "react";
+import backgroundImage from "../assets/images/background.png";
 
 // Preload the hero background image
 const preloadHeroBackground = () => {
     const img = new window.Image();
-    img.src = "/_next/static/media/background.webp"; // Next.js optimized path
-    // Also try the direct import path
-    const img2 = new window.Image();
-    img2.src = "/background.webp";
+    img.src = backgroundImage.src;
 };
 
 export default function LoadingScreen() {

@@ -8,7 +8,7 @@ import axe from "@/assets/svg/axe.svg";
 import rectangle from "@/assets/svg/PrizePoolRectangle.svg";
 import prizepoolCrown from "@/assets/svg/prizePoolCrown.svg";
 import prizepoolHeadingPolygon from "@/assets/svg/prizePoolheadingPolygon.svg";
-import prizepoolBottomForest from "@/assets/svg/Prizepoolforest.svg";
+import prizepoolBottomForest from "@/assets/svg/Prizepoolforest.png";
 import hotAirBalloon from "@/assets/svg/PrizePoolHotAirBalloon.svg";
 
 export function GoldStorage1Image() {

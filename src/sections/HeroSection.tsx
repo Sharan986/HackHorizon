@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Image from "next/image";
-import heroImage from "../assets/webp/backgroundImage.webp";
-import InnerveHeadingLogo from "@/components/ui/HackHorizonlogo";
+import backgroundImage from "../assets/images/background.png";
+import HackHorizonheadingLogo from "@/components/ui/HackHorizonlogo";
 import DevfolioButton from "@/components/ui/DevfolioButton";
 import BalloonShip from "@/components/ui/HeroSectionElement/BalloonShip";
 import Cloud from "@/components/ui/HeroSectionElement/Cloud";
@@ -10,14 +10,20 @@ import GreenDragon from "@/components/ui/HeroSectionElement/GreenDragon";
 import Bat1 from "@/components/ui/HeroSectionElement/Bat_1";
 import Bat2 from "@/components/ui/HeroSectionElement/Bat_2";
 import Balloon from "@/components/ui/HeroSectionElement/Ballon";
+import HackHorizonHeadingLogo from "@/components/ui/HackHorizonlogo";
 
 export default function HeroSection() {
     return (
-        <section className="relative w-full  h-screen flex justify-center items-center bg-gray-400 overflow-hidden ">
-            {/* this is absolute positioning section that is relative to the this hero section */}
-
-            {/* this is the bottom zero layer Image */}
-            <Image src={heroImage} alt="Hero Image" layout="fill" objectFit="cover" className="absolute inset-0 z-0" draggable={false}/>
+        <section className="relative w-full h-screen flex justify-center items-center overflow-hidden">
+            {/* Background Image */}
+            <Image 
+                src={backgroundImage} 
+                alt="Winter Castle" 
+                fill 
+                priority
+                className="absolute inset-0 z-0 object-cover" 
+                draggable={false}
+            />
             {/* <video
                 src="/videos/output_loop.webm"
                 className="absolute inset-0 w-full h-full object-cover z-0"
@@ -64,8 +70,8 @@ export default function HeroSection() {
 
             {/* iss mein oo component put karunga jispe mein flex properties apply kar sakta hu */}
 
-            <div className=" text-center space-y-10 ">
-                <InnerveHeadingLogo />
+            <div className="relative z-50 text-center space-y-6 md:space-y-8 lg:space-y-10 flex flex-col items-center justify-center">
+                <HackHorizonHeadingLogo />
                 <DevfolioButton />
             </div>
         </section>

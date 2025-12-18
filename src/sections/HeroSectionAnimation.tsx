@@ -1,6 +1,7 @@
 "use client"
 import Navbar from "@/components/layout/Navbar";
 import Image from "next/image";
+import backgroundImage from "../assets/images/background.png";
 import InnerveHeadingLogo from "@/components/ui/HackHorizonlogo";
 import DevfolioButton from "@/components/ui/DevfolioButton";
 import BalloonShip from "@/components/ui/HeroSectionElement/BalloonShip";
@@ -67,7 +68,7 @@ export default function HeroSectionAnimation() {
             {/* this is absolute positioning section that is relative to the this hero section */}
 
             {/* this is the bottom zero layer Image */}
-            <Image src="/background.webp" alt="Hero Image" fill style={{ objectFit: 'cover' }} className="absolute inset-0 z-0" draggable={false} priority loading="eager" />
+            <Image src={backgroundImage} alt="Hero Image" fill style={{ objectFit: 'cover' }} className="absolute inset-0 z-0" draggable={false} priority loading="eager" />
             {/* <video
                 src="/videos/output_loop.webm"
                 className="absolute inset-0 w-full h-full object-cover z-0"

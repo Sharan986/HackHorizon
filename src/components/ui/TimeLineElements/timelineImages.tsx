@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BottomImage from "@/assets/svg/timelineBottomImage.svg";
+import BottomImage from "@/assets/svg/timelineBottomImage.jpg";
 import Header from "@/assets/svg/TimelineHeading.svg";
 import Niddle from "@/assets/svg/TimelineNiddle.svg";
 
@@ -9,13 +9,14 @@ export function TimelineBottomImage() {
       <div className="absolute mt- inset-0 bg-linear-to-t from-transparent via-[#012A57]/10 to-[#012A57]  pointer-events-none" />
       <Image
         src={BottomImage}
-        alt="Timeline Bottom"
+        alt="Timeline Bottom - Winter Campfire Scene"
         className="w-full -mt-94 h-auto "
         style={{ 
           width: "100%", 
           height: "auto"
         }}
         draggable={false}
+        priority
       />
     </div>
   );
