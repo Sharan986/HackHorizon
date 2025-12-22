@@ -119,9 +119,9 @@ export default function TrackSection() {
                 />
             </div>
             <TrackButton />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[164px]  z-10 md:gap-y-16  md:my-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[164px] z-10 md:gap-y-16 md:my-20">
                 {TRACKS_CARDS_DATA.map((card, index) => (
-                    <div key={index} className="flex justify-center">
+                    <div key={index} className="flex flex-col items-center justify-center">
                         <TrackCard
                             BgColor={card.BgColor}
                             BC1={card.BC1}
