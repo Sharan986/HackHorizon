@@ -22,8 +22,11 @@ export default function Footer() {
         </div>
         <div className="space-y-6 md:space-y-8 lg:space-y-12 text-xl sm:text-2xl md:text-3xl lg:text-[36px]">
           <div className="flex flex-col items-center">
-            <p className="mb-2 md:mb-3">Dr. Ashwini Kumar
-               ,Asst Dean</p>
+            <p className="mb-2 md:mb-3 whitespace-pre-line text-center">
+              Dr. Ashwini Kumar
+              <br />Assistant Dean
+              <br />School of Engineering & IT
+            </p>
             <a
               className="relative flex justify-center items-center  gap-6 px-6 p-2 text-white  w-fit  shadow-[0_3px_0_#000] text-xl  md:text-2xl  font-medium border-t-4 border-b-4 border-b-[#EC8F01]  border-t-[#FFF] text-shadow  rounded-xl cursor-pointer transition-transform duration-200 hover:scale-[1.01] active:scale-95"
               style={{
@@ -36,7 +39,10 @@ export default function Footer() {
             </a>
           </div>
           <div className="flex flex-col items-center">
-            <p className="mb-2 md:mb-3">Dr.Souvik Singh Rathore, Faculty Coord</p>
+            <p className="mb-2 md:mb-3 whitespace-pre-line text-center">
+              Dr.Souvik Singh Rathore
+              <br />Faculty Coordinator
+            </p>
             <a
               href={`tel:8809257089`}
               className="relative flex justify-center items-center  gap-6 px-6 p-2 text-white  w-fit  shadow-[0_3px_0_#000] text-xl  md:text-2xl  font-medium border-t-4 border-b-4 border-b-[#EC8F01]  border-t-[#FFF] text-shadow  rounded-xl cursor-pointer transition-transform duration-200 hover:scale-[1.01] active:scale-95"
@@ -80,7 +86,7 @@ export default function Footer() {
             <MdOutlineMail className="hover:text-pink-500 transition-colors cursor-pointer" />
           </Link>
           <Link
-            href="https://www.instagram.com/gdg_on_campus_aju/"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -115,7 +121,7 @@ export default function Footer() {
             <FaGithub className="hover:text-gray-300 transition-colors cursor-pointer" />
           </Link>
           <Link
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/company/hack-horizon-aju/"
             target="_blank"
             rel="noopener noreferrer"
           >
