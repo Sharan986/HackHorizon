@@ -13,10 +13,19 @@ cloudinary.config({
 
 async function getAuth() {
   // Build credentials object from individual environment variables
+  // Handle the private key properly for both local and Vercel environments
+  let privateKey = process.env.GOOGLE_PRIVATE_KEY || '';
+  
+  // Remove quotes if present (from .env files)
+  privateKey = privateKey.replace(/^"(.*)"$/, '$1');
+  
+  // Replace escaped newlines with actual newlines
+  privateKey = privateKey.replace(/\\n/g, '\n');
+  
   const credentials = {
     type: "service_account",
     project_id: process.env.GOOGLE_PROJECT_ID,
-    private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    private_key: privateKey,
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
   };
   
