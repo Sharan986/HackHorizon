@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
-import fs from "fs";
-import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 
 const SHEET_ID = process.env.GOOGLE_SHEET_ID || "<YOUR_SHEET_ID_HERE>";
@@ -13,10 +11,51 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+function formatPrivateKey(key: string): string {
+
+  let formattedKey = key;
+
+    if (formattedKey.startsWith('"') && formattedKey.endsWith('"')) {
+    formattedKey = formattedKey.slice(1, -1);
+  }
+  if (formattedKey.startsWith("'") && formattedKey.endsWith("'")) {
+    formattedKey = formattedKey.slice(1, -1);
+  }
+  
+  
+  formattedKey = formattedKey.split('\\n').join('\n');
+  
+  if (!formattedKey.includes('\n')) {
+    
+    formattedKey = formattedKey
+      .replace('-----BEGIN PRIVATE KEY-----', '-----BEGIN PRIVATE KEY-----\n')
+      .replace('-----END PRIVATE KEY-----', '\n-----END PRIVATE KEY-----');
+  }
+  
+  return formattedKey;
+}
+
 async function getAuth() {
-  const credentials = JSON.parse(
-    fs.readFileSync(path.join(process.cwd(), "google-service-account.json"), "utf8")
-  );
+  const rawPrivateKey = process.env.GOOGLE_PRIVATE_KEY || '';
+  const privateKey = formatPrivateKey(rawPrivateKey);
+  
+  const credentials = {
+    type: "service_account" as const,
+    project_id: process.env.GOOGLE_PROJECT_ID,
+    private_key: privateKey,
+    client_email: process.env.GOOGLE_CLIENT_EMAIL,
+  };
+  
+  // Validate that all required credentials are present
+  if (!credentials.project_id || !credentials.private_key || !credentials.client_email) {
+    throw new Error("Missing required Google service account credentials in environment variables");
+  }
+  
+  // Validate private key format
+  if (!credentials.private_key.includes('-----BEGIN PRIVATE KEY-----')) {
+    throw new Error("Invalid private key format - missing PEM header");
+  }
+  
   return new google.auth.GoogleAuth({
     credentials,
     scopes: [

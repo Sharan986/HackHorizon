@@ -193,7 +193,7 @@ export default function VillageGirlAnimation() {
     // Preload all 9 barbarian images
     for (let i = 1; i <= 9; i++) {
       const img = new window.Image();
-      img.src = `/VillageBarbarian/barbarian${i}.webp`;
+      img.src = `/villagebarbarian/barbarian${i}.webp`;
       if (i === 1) {
         img.onload = () => setIsLoaded(true);
       }
@@ -236,7 +236,7 @@ export default function VillageGirlAnimation() {
               className="relative w-32 md:w-40 aspect-1/2 "
             >
           <Image
-            src={`/VillageBarbarian/barbarian${currentImage}.webp`}
+            src={`/villagebarbarian/barbarian${currentImage}.webp`}
             alt="Barbarian Character"
             // width={160}
             // height={320}
