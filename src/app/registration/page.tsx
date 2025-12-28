@@ -508,7 +508,14 @@ export default function RegistrationForm() {
                   <p className="text-[#E8C068] mb-4 text-lg">Scan the QR code below and upload payment screenshot</p>
                   <div className="flex justify-center mb-4">
                     <div className="p-4 bg-white rounded-lg border-4 border-[#4C1D00]">
-                      <img src="/upi.webp" alt="UPI QR Code" className="w-48 h-48 object-contain" />
+                      <Image 
+                        src="/UPI.webp" 
+                        alt="UPI QR Code" 
+                        width={192}
+                        height={192}
+                        className="w-48 h-48 object-contain" 
+                        priority
+                      />
                     </div>
                   </div>
                   <div className="mb-4">
