@@ -11,19 +11,36 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+function formatPrivateKey(key: string): string {
+
+  let formattedKey = key;
+
+    if (formattedKey.startsWith('"') && formattedKey.endsWith('"')) {
+    formattedKey = formattedKey.slice(1, -1);
+  }
+  if (formattedKey.startsWith("'") && formattedKey.endsWith("'")) {
+    formattedKey = formattedKey.slice(1, -1);
+  }
+  
+  
+  formattedKey = formattedKey.split('\\n').join('\n');
+  
+  if (!formattedKey.includes('\n')) {
+    
+    formattedKey = formattedKey
+      .replace('-----BEGIN PRIVATE KEY-----', '-----BEGIN PRIVATE KEY-----\n')
+      .replace('-----END PRIVATE KEY-----', '\n-----END PRIVATE KEY-----');
+  }
+  
+  return formattedKey;
+}
+
 async function getAuth() {
-  // Build credentials object from individual environment variables
-  // Handle the private key properly for both local and Vercel environments
-  let privateKey = process.env.GOOGLE_PRIVATE_KEY || '';
-  
-  // Remove quotes if present (from .env files)
-  privateKey = privateKey.replace(/^"(.*)"$/, '$1');
-  
-  // Replace escaped newlines with actual newlines
-  privateKey = privateKey.replace(/\\n/g, '\n');
+  const rawPrivateKey = process.env.GOOGLE_PRIVATE_KEY || '';
+  const privateKey = formatPrivateKey(rawPrivateKey);
   
   const credentials = {
-    type: "service_account",
+    type: "service_account" as const,
     project_id: process.env.GOOGLE_PROJECT_ID,
     private_key: privateKey,
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -32,6 +49,11 @@ async function getAuth() {
   // Validate that all required credentials are present
   if (!credentials.project_id || !credentials.private_key || !credentials.client_email) {
     throw new Error("Missing required Google service account credentials in environment variables");
+  }
+  
+  // Validate private key format
+  if (!credentials.private_key.includes('-----BEGIN PRIVATE KEY-----')) {
+    throw new Error("Invalid private key format - missing PEM header");
   }
   
   return new google.auth.GoogleAuth({
