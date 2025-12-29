@@ -58,12 +58,12 @@ export default function Footer() {
           </div>
         </div>
         <div className="w-full max-w-4xl mx-auto px-4 flex flex-col items-center">
-  {/* Responsive Title */}
+
   <div className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mt-6 md:mt-8 lg:mt-10 mb-4 md:mb-5 text-center font-bold">
     Venue
   </div>
 
-  {/* Responsive Map Container */}
+
   <div className="w-full border-4 md:border-8 border-[#fbdd66] rounded-3xl overflow-hidden">
     <div className="relative w-full aspect-video sm:aspect-[21/9]">
       <iframe
