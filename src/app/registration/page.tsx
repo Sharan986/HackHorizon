@@ -104,14 +104,24 @@ export default function RegistrationForm() {
           formData.append(key, String(value));
         }
       });
+      
+      console.log("Submitting registration form...");
       const res = await fetch("/api/register", {
         method: "POST",
         body: formData,
       });
-      if (res.ok) setSuccess(true);
-      else throw new Error("Submission failed");
+      
+      const data = await res.json();
+      console.log("Response from server:", data);
+      
+      if (res.ok) {
+        setSuccess(true);
+      } else {
+        throw new Error(data.error || `Submission failed with status ${res.status}`);
+      }
     } catch (err: any) {
-      setError(err?.message || "Unknown error");
+      console.error("Submission error:", err);
+      setError(err?.message || "Unknown error occurred. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -183,7 +193,6 @@ export default function RegistrationForm() {
       
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(76,29,0,0.3),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5" />
 
       {/* Barbarian Character with Speech Bubble */}
       {!success && !error && (
