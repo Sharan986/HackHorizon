@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useState, useEffect, useRef } from "react";
-const backgroundImage = "/background.png";
+const backgroundImage = "/backgroundimg.webp";
 
 // Preload the hero background image
 const preloadHeroBackground = () => {

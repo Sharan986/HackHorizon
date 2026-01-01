@@ -56,7 +56,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico" type="image/x-icon" />
-        {/* Removed preload for background.webp */}
+        {/* Removed preload for backgroundimg.webp */}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${clashClan.variable} antialiased`}>
         <Snowfall />
