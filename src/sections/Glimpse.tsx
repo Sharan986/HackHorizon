@@ -13,7 +13,7 @@ export default function Glimpse() {
                 <div className="flex justify-center mb-12 md:mb-16 lg:mb-20">
                     <div className="relative w-full max-w-4xl">
                         <Image 
-                            src="/glimpse-heading.png" 
+                            src="/images/ui/glimpse-heading.png" 
                             alt="Glimpse Of Hack Horizon 2025" 
                             width={1200}
                             height={300}

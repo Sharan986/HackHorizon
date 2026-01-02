@@ -1,6 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Image from "next/image";
-const backgroundImage = "/backgroundimg.webp";
+const backgroundImage = "/images/ui/backgroundimg.webp";
 import HackHorizonheadingLogo from "@/components/ui/HackHorizonlogo";
 // import removed
 // logo removed
