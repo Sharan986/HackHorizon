@@ -1,12 +1,6 @@
 import yellowTab from "../assets/svg/DividerButton.svg";
 
 import Image from "next/image";
-import glimpse1 from "../assets/GlimpseImages/glimpse1.png";
-import glimpse2 from "../assets/GlimpseImages/glimpse2.png";
-import glimpse3 from "../assets/GlimpseImages/glimpse3.png";
-import glimpse4 from "../assets/GlimpseImages/glimpse4.png";
-import glimpse5 from "../assets/GlimpseImages/glimpse5.png";
-import glimpse6 from "../assets/GlimpseImages/glimpse6.png";
 
 export default function Glimpse() {
     return (
@@ -19,7 +13,7 @@ export default function Glimpse() {
                 <div className="flex justify-center mb-12 md:mb-16 lg:mb-20">
                     <div className="relative w-full max-w-4xl">
                         <Image 
-                            src="/glimpse-heading.png" 
+                            src="/images/ui/glimpse-heading.png" 
                             alt="Glimpse Of Hack Horizon 2025" 
                             width={1200}
                             height={300}
@@ -40,10 +34,11 @@ export default function Glimpse() {
                             }}>
                                 <div className="relative w-[280px] h-[360px] bg-gray-300 overflow-hidden">
                                     <Image 
-                                        src={glimpse1} 
+                                        src="/images/glimpse/glimpse1.png" 
                                         alt="HackHorizon Memory 1" 
                                         fill
                                         className="object-cover"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <p className="absolute bottom-4 left-4 right-4 text-center text-gray-800 font-medium text-sm">
@@ -69,10 +64,11 @@ export default function Glimpse() {
                             }}>
                                 <div className="relative w-[280px] h-[360px] bg-gray-300 overflow-hidden">
                                     <Image 
-                                        src={glimpse2} 
+                                        src="/images/glimpse/glimpse2.png" 
                                         alt="HackHorizon Memory 2" 
                                         fill
                                         className="object-cover"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <p className="absolute bottom-4 left-4 right-4 text-center text-gray-800 font-medium text-sm">
@@ -94,10 +90,11 @@ export default function Glimpse() {
                             }}>
                                 <div className="relative w-[280px] h-[360px] bg-gray-300 overflow-hidden">
                                     <Image 
-                                        src={glimpse3} 
+                                        src="/images/glimpse/glimpse3.png" 
                                         alt="HackHorizon Memory 3" 
                                         fill
                                         className="object-cover"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <p className="absolute bottom-4 left-4 right-4 text-center text-gray-800 font-medium text-sm">
@@ -116,10 +113,11 @@ export default function Glimpse() {
                             }}>
                                 <div className="relative w-[280px] h-[360px] bg-gray-300 overflow-hidden">
                                     <Image 
-                                        src={glimpse4} 
+                                        src="/images/glimpse/glimpse4.png" 
                                         alt="HackHorizon Memory 4" 
                                         fill
                                         className="object-cover"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <p className="absolute bottom-4 left-4 right-4 text-center text-gray-800 font-medium text-sm">
@@ -138,10 +136,11 @@ export default function Glimpse() {
                             }}>
                                 <div className="relative w-[280px] h-[360px] bg-gray-300 overflow-hidden">
                                     <Image 
-                                        src={glimpse5} 
+                                        src="/images/glimpse/glimpse5.png" 
                                         alt="HackHorizon Memory 5" 
                                         fill
                                         className="object-cover"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <p className="absolute bottom-4 left-4 right-4 text-center text-gray-800 font-medium text-sm">
@@ -160,10 +159,11 @@ export default function Glimpse() {
                             }}>
                                 <div className="relative w-[280px] h-[360px] bg-gray-300 overflow-hidden">
                                     <Image 
-                                        src={glimpse6} 
+                                        src="/images/glimpse/glimpse6.png" 
                                         alt="HackHorizon Memory 6" 
                                         fill
                                         className="object-cover"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <p className="absolute bottom-4 left-4 right-4 text-center text-gray-800 font-medium text-sm">

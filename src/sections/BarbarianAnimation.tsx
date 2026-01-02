@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import TextBubbleBox from "../assets/webp/TextBubbleBox.webp";
 
 // Section to character expression mapping (using barbarian1-9.webp)
 const SECTION_CONFIG = {
@@ -267,7 +266,7 @@ export default function VillageGirlAnimation() {
             className="relative md:top-8  md:-left-12 top-4 -left-6 "
           >
             <div className="md:w-100 md:h-40 h-24 w-60 relative flex justify-center items-center " >
-              <Image src={TextBubbleBox} alt="Text Bubble Box" fill className="object-contain absolute inset-0 z-0  " quality={100} sizes="(max-width: 600px) 100vw, 600px" draggable={false}/>
+              <Image src="/images/ui/TextBubbleBox.webp" alt="Text Bubble Box" fill className="object-contain absolute inset-0 z-0  " quality={100} sizes="(max-width: 600px) 100vw, 600px" draggable={false} loading="lazy" />
               <motion.p
                 key={bubbleText}
                 initial={{ opacity: 0 }}

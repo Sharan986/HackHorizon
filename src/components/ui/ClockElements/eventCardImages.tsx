@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Plank from "@/assets/images/datePlank.png"
 import Shield from "@/assets/svg/eventCardShield.svg"
 
 export function PlankImage() {
   return (
     <div className="w-[245px] sm:w-[350px] md:w-[490px] lg:w-[700px]">
-        <Image src={Plank} alt="" className="w-full h-auto" draggable={false}/>
+        <Image src="/images/sponsors/datePlank.png" alt="" width={700} height={100} className="w-full h-auto" draggable={false}/>
     </div>
   );
 }

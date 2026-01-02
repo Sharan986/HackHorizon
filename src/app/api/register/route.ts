@@ -12,31 +12,46 @@ cloudinary.config({
 });
 
 function formatPrivateKey(key: string): string {
-
   let formattedKey = key;
 
-    if (formattedKey.startsWith('"') && formattedKey.endsWith('"')) {
+  // Remove surrounding quotes if present
+  if (formattedKey.startsWith('"') && formattedKey.endsWith('"')) {
     formattedKey = formattedKey.slice(1, -1);
   }
   if (formattedKey.startsWith("'") && formattedKey.endsWith("'")) {
     formattedKey = formattedKey.slice(1, -1);
   }
   
-  
+  // Replace literal \n with actual newlines
   formattedKey = formattedKey.split('\\n').join('\n');
   
+  // If still no newlines, try to add them
   if (!formattedKey.includes('\n')) {
-    
     formattedKey = formattedKey
       .replace('-----BEGIN PRIVATE KEY-----', '-----BEGIN PRIVATE KEY-----\n')
       .replace('-----END PRIVATE KEY-----', '\n-----END PRIVATE KEY-----');
   }
+  
+  console.log('Private key format check:');
+  console.log('- Has BEGIN marker:', formattedKey.includes('-----BEGIN PRIVATE KEY-----'));
+  console.log('- Has END marker:', formattedKey.includes('-----END PRIVATE KEY-----'));
+  console.log('- Has newlines:', formattedKey.includes('\n'));
+  console.log('- Key length:', formattedKey.length);
   
   return formattedKey;
 }
 
 async function getAuth() {
   const rawPrivateKey = process.env.GOOGLE_PRIVATE_KEY || '';
+  
+  // Check if credentials are properly configured
+  if (!process.env.GOOGLE_PROJECT_ID || !process.env.GOOGLE_CLIENT_EMAIL || !rawPrivateKey) {
+    throw new Error(
+      "Missing Google service account credentials. Please check your .env file and ensure " +
+      "GOOGLE_PROJECT_ID, GOOGLE_CLIENT_EMAIL, and GOOGLE_PRIVATE_KEY are set."
+    );
+  }
+  
   const privateKey = formatPrivateKey(rawPrivateKey);
   
   const credentials = {
@@ -46,14 +61,9 @@ async function getAuth() {
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
   };
   
-  // Validate that all required credentials are present
-  if (!credentials.project_id || !credentials.private_key || !credentials.client_email) {
-    throw new Error("Missing required Google service account credentials in environment variables");
-  }
-  
   // Validate private key format
   if (!credentials.private_key.includes('-----BEGIN PRIVATE KEY-----')) {
-    throw new Error("Invalid private key format - missing PEM header");
+    throw new Error("Invalid private key format - missing PEM header. Please check GOOGLE_PRIVATE_KEY in .env");
   }
   
   return new google.auth.GoogleAuth({
@@ -66,6 +76,14 @@ async function getAuth() {
 }
 
 async function uploadToCloudinary(file: File): Promise<string> {
+  // Check if Cloudinary is configured
+  if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
+    throw new Error(
+      "Cloudinary not configured. Please check your .env file and ensure " +
+      "CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET are set."
+    );
+  }
+  
   // Convert File to base64
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
@@ -82,6 +100,9 @@ async function uploadToCloudinary(file: File): Promise<string> {
 
 export async function POST(req: NextRequest) {
   try {
+    // Log start of request
+    console.log("Received registration request");
+    
     const formData = await req.formData();
     
     const teamName = formData.get("teamName") as string;
@@ -92,14 +113,31 @@ export async function POST(req: NextRequest) {
     const transactionId = formData.get("transactionId") as string;
     const paymentFile = formData.get("paymentScreenshot") as File | null;
     
+    console.log("Form data received:", { teamName, collegeName, transactionId });
+    
+    // Validate required fields
+    if (!teamName || !collegeName || !leaderStr || !membersStr || !transactionId) {
+      console.error("Missing required fields");
+      return NextResponse.json(
+        { success: false, error: "Missing required fields" },
+        { status: 400 }
+      );
+    }
+    
+    console.log("Attempting to authenticate with Google");
     const auth = await getAuth();
+    console.log("Google authentication successful");
+    
     let paymentScreenshotUrl = "";
     
     // Upload image to Cloudinary
     if (paymentFile) {
+      console.log("Uploading file to Cloudinary");
       paymentScreenshotUrl = await uploadToCloudinary(paymentFile);
+      console.log("Cloudinary upload successful:", paymentScreenshotUrl);
     }
     
+    console.log("Creating Google Sheets client");
     const sheets = google.sheets({ version: "v4", auth });
     const now = new Date().toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
@@ -111,8 +149,19 @@ export async function POST(req: NextRequest) {
       second: "2-digit",
       hour12: true,
     });
-    const leader = JSON.parse(leaderStr);
-    const members = JSON.parse(membersStr);
+    
+    let leader, members;
+    try {
+      leader = JSON.parse(leaderStr);
+      members = JSON.parse(membersStr);
+      console.log("Parsed leader and members successfully");
+    } catch (parseError: any) {
+      console.error("Failed to parse JSON data:", parseError);
+      return NextResponse.json(
+        { success: false, error: "Invalid data format" },
+        { status: 400 }
+      );
+    }
     
     // Always create array with all 5 member slots (leader + 4 members)
     // Fill empty slots with empty strings
@@ -136,6 +185,7 @@ export async function POST(req: NextRequest) {
       paymentScreenshotUrl,
     ];
     
+    console.log("Attempting to write to Google Sheets");
     await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
       range: "Sheet1!A1",
@@ -144,11 +194,20 @@ export async function POST(req: NextRequest) {
       requestBody: { values: [row] },
     });
     
+    console.log("Successfully wrote to Google Sheets");
     return NextResponse.json({ success: true });
   } catch (error: any) {
     console.error("Registration error:", error);
+    console.error("Error stack:", error.stack);
+    console.error("Error message:", error?.message);
+    
+    // Return detailed error message for debugging
     return NextResponse.json(
-      { success: false, error: error?.message || "Unknown error" },
+      { 
+        success: false, 
+        error: error?.message || "Unknown error",
+        details: process.env.NODE_ENV === 'development' ? error.stack : undefined 
+      },
       { status: 500 }
     );
   }

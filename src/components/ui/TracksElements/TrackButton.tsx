@@ -1,5 +1,4 @@
 import Image from "next/image";
-import TrackButtonImage from "../../../assets/webp/tracks/tracks heading.webp"
 
 export default function TrackButton() {
     return (
@@ -17,7 +16,7 @@ export default function TrackButton() {
                 </div>
             </div> */}
             <div className="mb-16 min-w-[310px] z-20" >
-                <Image src={TrackButtonImage} alt="Track button Img" draggable={false}/>
+                <Image src="/images/tracks/tracks heading.webp" alt="Track button Img" width={703} height={184} draggable={false} loading="lazy" />
             </div>
         </>
     )
