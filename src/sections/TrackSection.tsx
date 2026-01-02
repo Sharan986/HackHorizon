@@ -1,7 +1,5 @@
 'use client';
 import Image from "next/image";
-import TrackBgImg from "../assets/webp/tracks/TrackBgImg.png"
-import TrackBgImgUpper from "../assets/webp/tracks/TrackBgImgUpper.webp"
 import TrackCard from "@/components/ui/TracksElements/TrackCard";
 import AgricultureImg from "../assets/svg/Traks/agriculture.svg"
 import GovernanceImg from "../assets/svg/Traks/Governance.svg"
@@ -135,8 +133,8 @@ export default function TrackSection() {
             </div>
             <div className="h-[50vh]"  />
             <div className="absolute w-full z-0 bottom-0 h-[90vh] ">
-                <Image src={TrackBgImg} alt="background image" fill style={{ objectFit: 'cover' }} className="z-0" draggable={false} sizes="100vw" />
-                <Image src={TrackBgImgUpper} alt="background image upper" fill style={{ objectFit: 'cover' }} className="z-10" draggable={false} sizes="100vw" />
+                <Image src="/images/tracks/TrackBgImg.png" alt="background image" fill style={{ objectFit: 'cover' }} className="z-0" draggable={false} sizes="100vw" loading="lazy" />
+                <Image src="/images/tracks/TrackBgImgUpper.webp" alt="background image upper" fill style={{ objectFit: 'cover' }} className="z-10" draggable={false} sizes="100vw" loading="lazy" />
                 <div className="absolute inset-0 bg-linear-to-b from-black via-black/80 to-transparent " />
             </div>
         </section>

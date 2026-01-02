@@ -1,39 +1,13 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Tilt from "react-parallax-tilt";
-
-// Import your assets
-import ArvindKrPandey from "../assets/organisers/ArvindKrPandey.png";
-import Ashwini from "../assets/organisers/Ashwini.png";
-import souviksir from "../assets/organisers/souviksir.png";
-import mamatha from "../assets/organisers/mamatha.jpg";
-import akashsir from "../assets/organisers/akashsir.png";
-import sayantanimam from "../assets/organisers/sayantanimam.png";
-import KhushiRani from "../assets/organisers/Khushi rani.jpg";
-import anjali from "../assets/organisers/anjali.jpg";
-import ritesh from "../assets/organisers/ritesh.jpg";
-import gourav from "../assets/organisers/gourav.jpg";
-import preet from "../assets/organisers/preet.jpg";
-import nikita from "../assets/organisers/nikita.jpg";
-import sonali from "../assets/organisers/sonali.jpg";
-import sohail from "../assets/organisers/sohail.jpg";
-import adeeb from "../assets/organisers/adeeb.jpg";
-import sanchit from "../assets/organisers/sanchit.jpg";
-import aaditya from "../assets/organisers/aaditya.jpg";
-import avijeet from "../assets/organisers/avijeet.jpg";
-import umeshsir from "../assets/organisers/umeshsir.png";
-import meghamam from "../assets/organisers/meghamam.jpg";
-import utkarshsir from "../assets/organisers/utkarsh sir.png";
-
-// Import the Header Image
-import OrganisersHeaderImg from "@/assets/webp/ORGANISERS.png";
 
 // --- REUSABLE CARD COMPONENT ---
 interface OrganizerCardProps {
   name: string;
   role?: string;
   team: string;
-  image: StaticImageData;
+  image: string;
   theme?: "gold" | "purple" | "red" | "dark";
 }
 
@@ -130,36 +104,36 @@ const OrganizerCard = ({ name, role, team, image, theme = "purple" }: OrganizerC
 
 export default function OrganizersSection() {
   const convenors = [
-    { name: "Dr. Arvind Kumar Pandey", role: "Dean, School of Engineering & IT", institution: "ARKA JAIN University", image: ArvindKrPandey },
-    { name: "Dr. Ashwini Kumar", role: "Asst. Dean, School of Engineering & IT", institution: "ARKA JAIN University", image: Ashwini },
+    { name: "Dr. Arvind Kumar Pandey", role: "Dean, School of Engineering & IT", institution: "ARKA JAIN University", image: "/images/organisers/ArvindKrPandey.png" },
+    { name: "Dr. Ashwini Kumar", role: "Asst. Dean, School of Engineering & IT", institution: "ARKA JAIN University", image: "/images/organisers/Ashwini.png" },
   ];
 
   const facultyCoordinators = [
-    { name: "Dr. Souvik Singh Rathore", role: "Assistant Professor", institution: "ARKA JAIN University", image: souviksir },
-    { name: "Prof. Mamatha V", role: "Assistant Professor", institution: "ARKA JAIN University", image: mamatha },
-    { name: "Prof. Akash Bhagat", role: "Assistant Professor", institution: "ARKA JAIN University", image: akashsir },
-    { name: "Prof. Sayantani De", role: "Assistant Professor", institution: "ARKA JAIN University", image: sayantanimam },
+    { name: "Dr. Souvik Singh Rathore", role: "Assistant Professor", institution: "ARKA JAIN University", image: "/images/organisers/souviksir.png" },
+    { name: "Prof. Mamatha V", role: "Assistant Professor", institution: "ARKA JAIN University", image: "/images/organisers/mamatha.jpg" },
+    { name: "Prof. Akash Bhagat", role: "Assistant Professor", institution: "ARKA JAIN University", image: "/images/organisers/akashsir.png" },
+    { name: "Prof. Sayantani De", role: "Assistant Professor", institution: "ARKA JAIN University", image: "/images/organisers/sayantanimam.png" },
   ];
 
   const studentCoordinators = [
-    { name: "Khushi Rani", role: "General Secretary", team: "Code & Compute Society", image: KhushiRani },
-    { name: "Ritesh Kumar", role: "President", team: "Code & Compute Society", image: ritesh },
-    { name: "Gourav Kr Pandey", role: "Vice-President", team: "Code & Compute Society", image: gourav },
-    { name: "Anjali Singh", role: "Organiser", team: "GDG on Campus AJU", image: anjali },
-    { name: "Singh Preet", role: "Technical Lead", team: "Code & Compute Society", image: preet },
-    { name: "Nikita Mishra", role: "PR Lead", team: "GDG on Campus AJU", image: nikita },
-    { name: "Sonali Mahato", role: "Social Media Lead", team: "GDG on Campus AJU", image: sonali },
-    { name: "Sohail Khan", role: "Creative Lead", team: "GDG on Campus AJU", image: sohail },
-    { name: "Adeeb Razi", role: "Community Lead", team: "GDG on Campus AJU", image: adeeb },
-    { name: "Sanchit Agarwal", role: "Co-Technical Lead", team: "GDG on Campus AJU", image: sanchit },
-    { name: "Aaditya Singh", role: "Design Lead", team: "GDG on Campus AJU", image: aaditya },
-    { name: "Avijeet Ghosal", role: "Management Lead", team: "GDG on Campus AJU", image: avijeet },
+    { name: "Khushi Rani", role: "General Secretary", team: "Code & Compute Society", image: "/images/organisers/Khushi rani.jpg" },
+    { name: "Ritesh Kumar", role: "President", team: "Code & Compute Society", image: "/images/organisers/ritesh.jpg" },
+    { name: "Gourav Kr Pandey", role: "Vice-President", team: "Code & Compute Society", image: "/images/organisers/gourav.jpg" },
+    { name: "Anjali Singh", role: "Organiser", team: "GDG on Campus AJU", image: "/images/organisers/anjali.jpg" },
+    { name: "Singh Preet", role: "Technical Lead", team: "Code & Compute Society", image: "/images/organisers/preet.jpg" },
+    { name: "Nikita Mishra", role: "PR Lead", team: "GDG on Campus AJU", image: "/images/organisers/nikita.jpg" },
+    { name: "Sonali Mahato", role: "Social Media Lead", team: "GDG on Campus AJU", image: "/images/organisers/sonali.jpg" },
+    { name: "Sohail Khan", role: "Creative Lead", team: "GDG on Campus AJU", image: "/images/organisers/sohail.jpg" },
+    { name: "Adeeb Razi", role: "Community Lead", team: "GDG on Campus AJU", image: "/images/organisers/adeeb.jpg" },
+    { name: "Sanchit Agarwal", role: "Co-Technical Lead", team: "GDG on Campus AJU", image: "/images/organisers/sanchit.jpg" },
+    { name: "Aaditya Singh", role: "Design Lead", team: "GDG on Campus AJU", image: "/images/organisers/aaditya.jpg" },
+    { name: "Avijeet Ghosal", role: "Management Lead", team: "GDG on Campus AJU", image: "/images/organisers/avijeet.jpg" },
   ];
 
   const technicalCoordinators = [
-    { name: "Mr. Umesh Tiwari", role: "I.T Head", team: "ARKA JAIN University", image: umeshsir },
-    { name: "Megha Shrivastava", role: "Technical", team: "ARKA JAIN University", image: meghamam },
-    { name: "Mr. Utkarsh", role: "Technical", team: "ARKA JAIN University", image: utkarshsir },
+    { name: "Mr. Umesh Tiwari", role: "I.T Head", team: "ARKA JAIN University", image: "/images/organisers/umeshsir.png" },
+    { name: "Megha Shrivastava", role: "Technical", team: "ARKA JAIN University", image: "/images/organisers/meghamam.jpg" },
+    { name: "Mr. Utkarsh", role: "Technical", team: "ARKA JAIN University", image: "/images/organisers/utkarsh sir.png" },
   ];
 
   return (
@@ -174,8 +148,10 @@ export default function OrganizersSection() {
         ========================================== */}
         <div className="relative w-[300px] md:w-[600px] mb-16 md:mb-24 z-20 select-none">
           <Image 
-            src={OrganisersHeaderImg} 
+            src="/images/ui/ORGANISERS.png" 
             alt="Organisers Header" 
+            width={600}
+            height={150}
             draggable={false}
             className="w-full h-auto object-contain"
           />

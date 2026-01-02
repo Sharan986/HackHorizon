@@ -7,13 +7,6 @@ import {
   Rectangle,
 } from "@/components/ui/PrizepoolElements/prizePoolImages";
 
-// Import images
-import CodeComputerSociety from "@/assets/images/CodeComputeSociety.png";
-import GDG from "@/assets/images/GDG.png";
-import IBM from "@/assets/images/IBM.png";
-import iic from "@/assets/images/iic.png";
-import CollaborationHeaderImg from "@/assets/webp/COLLABORATIONS.webp";
-
 export default function CollaborationSection() {
   return (
     <section data-section="collaboration" className="relative w-full flex flex-col items-center justify-center pt-10 md:pt-20">
@@ -21,8 +14,10 @@ export default function CollaborationSection() {
       {/* HEADER SECTION */}
       <div className="relative w-[340px] md:w-[703px] mb-12 md:mb-20 z-20 select-none">
         <Image 
-          src={CollaborationHeaderImg} 
+          src="/images/ui/COLLABORATIONS.webp" 
           alt="Collaborations Header" 
+          width={703}
+          height={150}
           draggable={false}
           className="w-full h-auto object-contain"
         />
@@ -63,10 +58,11 @@ export default function CollaborationSection() {
                 {/* --- Image Container (Increased Size) --- */}
                 <div className="relative w-[90%] h-[75%] flex justify-center items-center z-10">
                   <Image 
-                    src={IBM} 
+                    src="/images/sponsors/IBM.png" 
                     alt="IBM Logo"
                     className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
                     fill
+                    loading="lazy"
                   />
                 </div>
                 
@@ -117,10 +113,11 @@ export default function CollaborationSection() {
                 {/* --- Image Container (Increased Size) --- */}
                 <div className="relative w-[90%] h-[75%] flex justify-center items-center z-10">
                   <Image 
-                    src={CodeComputerSociety} 
+                    src="/images/sponsors/CodeComputeSociety.png" 
                     alt="Code Computer Society Logo"
                     className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
                     fill
+                    loading="lazy"
                   />
                 </div>
 
@@ -171,10 +168,11 @@ export default function CollaborationSection() {
                 {/* --- Image Container (Increased Size) --- */}
                 <div className="relative w-[90%] h-[75%] flex justify-center items-center z-10">
                   <Image 
-                    src={GDG} 
+                    src="/images/sponsors/GDG.png" 
                     alt="GDG Logo"
                     className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
                     fill
+                    loading="lazy"
                   />
                 </div>
 
@@ -224,10 +222,11 @@ export default function CollaborationSection() {
                 {/* --- Image Container (Increased Size) --- */}
                 <div className="relative w-[90%] h-[75%] flex justify-center items-center z-10">
                   <Image 
-                    src={iic} 
+                    src="/images/sponsors/iic.png" 
                     alt="Institution's Innovation Council Logo"
                     className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
                     fill
+                    loading="lazy"
                   />
                 </div>
 

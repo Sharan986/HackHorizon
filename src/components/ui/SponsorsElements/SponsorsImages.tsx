@@ -1,21 +1,15 @@
 import Image from 'next/image';
-import planks from '@/assets/images/WoodPlanks.png';
 import sponsorCard from '@/assets/svg/SponsorCard.svg';
-// import udchalo from '@/assets/images/UdChalo.png' // TODO: Add UdChalo.png to assets
-import backgroundImage from '@/assets/images/SponsorsBackground.png'
-import headingEnds from '@/assets/svg/SponsorHeadingEnds.svg'
-// import ethIndiaImage from '@/assets/svg/ETHIndiaLogo.png' // TODO: Add ETHIndiaLogo.png to assets
-import codeComputeSociety from '@/assets/images/CodeComputeSociety.png';
-// import keychainlogo from '@/assets/svg/keyChainLogo.svg'; // TODO: Add keyChainLogo.svg to assets
-// import keplologo from "@/assets/images/keploLogo.png" // TODO: Add keploLogo.png to assets
-// import givemycertificate from "@/assets/images/givemycertficateLogo.png"; // TODO: Add givemycertficateLogo.png to assets
+import headingEnds from '@/assets/svg/SponsorHeadingEnds.svg';
 
 export function Planks() {
   return (
     <div className="overflow-hidden">
       <Image
-        src={planks}
+        src="/images/sponsors/WoodPlanks.png"
         alt="planks"
+        width={800}
+        height={100}
         className="min-w-max md:h-30 h-18"
         draggable={false}
       />  
@@ -43,7 +37,7 @@ export function SponsorCardBorder() {
 export function BackgroundImage() {
   return (
     <div className='overflow-hidden'>
-      <Image className="min-w-max h-auto w-screen" src={backgroundImage} alt="sponsor card" draggable={false}/>
+      <Image className="min-w-max h-auto w-screen" src="/images/sponsors/SponsorsBackground.png" alt="sponsor card" width={1920} height={1080} draggable={false}/>
     </div>
   );
 }
@@ -97,7 +91,7 @@ export function HeadingEndRight() {
 export function CodeCraftersLogo() {
   return (
     <div className='max-w-[80%]'>
-      <Image src={codeComputeSociety} alt="ETHIndia Sponsor" draggable={false}/>
+      <Image src="/images/sponsors/CodeComputeSociety.png" alt="ETHIndia Sponsor" width={300} height={100} draggable={false}/>
     </div>
   );
 }

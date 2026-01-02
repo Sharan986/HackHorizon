@@ -10,11 +10,18 @@ import LoadingScreen from "@/sections/LoadingScreen";
 import Audio from "@/components/ui/Audio";
 import ScrollBackToTopButton from "@/components/ui/scrollBackToTopButton";
 import { motion } from "motion/react";
-import Glimpse from "@/sections/Glimpse";
-import OrganizersSection from "@/sections/OrganizersSection";
-// import Sponsors from "@/sections/SponsorsSection";
 
 // Lazy load below-the-fold sections
+const Glimpse = dynamic(() => import("@/sections/Glimpse"), {
+  loading: () => <div className="min-h-screen" />,
+  ssr: false,
+});
+
+const OrganizersSection = dynamic(() => import("@/sections/OrganizersSection"), {
+  loading: () => <div className="min-h-screen" />,
+  ssr: false,
+});
+
 const PrizePoolSection = dynamic(() => import("@/sections/prizePoolSection"), {
   loading: () => <div className="min-h-screen" />,
   ssr: false,

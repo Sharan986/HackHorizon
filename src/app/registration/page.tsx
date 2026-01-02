@@ -518,12 +518,11 @@ export default function RegistrationForm() {
                   <div className="flex justify-center mb-4">
                     <div className="p-4 bg-white rounded-lg border-4 border-[#4C1D00]">
                       <Image 
-                        src="/UPI.webp" 
+                        src="/images/ui/UPI.webp" 
                         alt="UPI QR Code" 
                         width={192}
                         height={192}
-                        className="w-48 h-48 object-contain" 
-                        priority
+                        className="w-48 h-48 object-contain"
                       />
                     </div>
                   </div>

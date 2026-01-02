@@ -1,6 +1,5 @@
 'use client';
 import Image from "next/image";
-import PrizePoolClouds from "../assets/webp/clockTopCloud.webp"
 import CountdownTimerCard from "@/components/layout/countdownTimerCard";
 import RopeImage from "../assets/svg/rope.svg"
 import { motion, useScroll, useTransform } from "motion/react";
@@ -26,7 +25,7 @@ export default function ClockBannerSection() {
             <Cloud position=" top-[-40%] right-[-150px] md:right-[100px]" X={rightCloudX} />
 
             <div className="absolute left-0 right-0 z-0">
-                <Image src={PrizePoolClouds} alt="clouds background" style={{ objectFit: 'fill' }} className="w-screen h-full" draggable={false} sizes="100vw" />
+                <Image src="/images/hero/clockTopCloud.webp" alt="clouds background" width={1920} height={400} style={{ objectFit: 'fill' }} className="w-screen h-full" draggable={false} sizes="100vw" loading="lazy" />
             </div>
             <div className="w-fit  relative -top-8 md:-top-20 z-20" >
                 <CountdownTimerCard />

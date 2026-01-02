@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import BordImage from "../../../assets/images/board.png";
+// import BordImage from "../../../assets/images/board.png"; // TODO: Add board.png to public/images/ui if needed
 import { motion } from "motion/react";
 
 export default function BordAnimation() {
@@ -17,7 +17,8 @@ export default function BordAnimation() {
                 viewport={{ once: true, amount: 0.4 }}       // triggers when visible
                 className="animate-bounce-slow"               // your bounce effect after
             >
-                <Image src={BordImage} alt="Board"  draggable={false}/>
+                {/* TODO: Add board.png to public/images/ui if needed */}
+                {/* <Image src="/images/ui/board.png" alt="Board" width={300} height={150} draggable={false}/> */}
             </motion.div>
         </div>
     );

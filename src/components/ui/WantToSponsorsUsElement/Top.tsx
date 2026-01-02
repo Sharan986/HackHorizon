@@ -1,6 +1,4 @@
 import Image from "next/image";
-import WSTUChampionCard from "../../../assets/webp/WTSU/WTSUChamionCard.webp"
-import WTSUSponsorsBonus from "../../../assets/webp/WTSU/WTSUSponsorsBonus.webp"
 import WTSUSponsorsBonusSvg from "../../../assets/svg/WTSU/sponsorsbonus.svg"
 import WTSUglow from "../../../assets/svg/WTSU/WTSUGlow2.svg"
 
@@ -38,12 +36,13 @@ export default function WTSUTop() {
                         draggable={false}
                     />
                     <Image 
-                        src={WSTUChampionCard} 
+                        src="/images/sponsors/WTSUChamionCard.webp" 
                         alt="WSTUChampionCard" 
                         className="relative z-20 w-full h-full object-contain" 
                         fill
                         sizes="(max-width: 640px) 32px, (max-width: 768px) 40px, (max-width: 1024px) 48px, 64px"
                         draggable={false}
+                        loading="lazy"
                     />
                 </div>
             </div>

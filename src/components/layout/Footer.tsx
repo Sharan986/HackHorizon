@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FooterImg from "./../../assets/webp/footerImg.webp";
 import { FaInstagram, FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaMeta, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
@@ -9,13 +8,14 @@ export default function Footer() {
   return (
     <footer className="relative flex justify-center items-center w-full min-h-screen py-8 md:py-10">
       <Image
-        src={FooterImg}
+        src="/images/ui/footerImg.webp"
         alt="Footer Image"
         fill
         style={{ objectFit: 'cover' }}
         className="z-0"
         draggable={false}
         sizes="100vw"
+        loading="lazy"
       />
       <div className="flex flex-col items-center mx-auto z-10 text-white px-4 md:px-8">
         <div className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mb-8 md:mb-12 lg:mb-18 text-center">

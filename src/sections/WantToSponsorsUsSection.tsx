@@ -1,6 +1,5 @@
 import WTSUCenterCard from "@/components/ui/WantToSponsorsUsElement/CenterCard";
 import WTSUTop from "@/components/ui/WantToSponsorsUsElement/Top";
-import WTSUBgImg from "../assets/webp/WTSU/WantToSponsorsUs.webp";
 import WTSUButton from "@/components/ui/WantToSponsorsUsElement/Button";
 import WTSURod from "../assets/svg/WTSU/WTSURod.svg"
 import Image from "next/image";
@@ -9,7 +8,7 @@ export default function WantToSponsorsUsSection() {
     return (
         <section
             style={{
-                backgroundImage: `url(${WTSUBgImg.src})`,
+                backgroundImage: `url(/images/sponsors/WantToSponsorsUs.webp)`,
             }}
             className="relative border-box flex justify-center items-center w-full min-h-[90vh]  py-30 px-4 sm:px-6"
         >
