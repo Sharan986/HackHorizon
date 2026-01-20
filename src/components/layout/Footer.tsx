@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col items-center">
             <p className="mb-2 md:mb-3 whitespace-pre-line text-center">
-              MS Anjali Kumari
+              MS Anjali Singh
               <br />Student Coordinator
             </p>
             <a
