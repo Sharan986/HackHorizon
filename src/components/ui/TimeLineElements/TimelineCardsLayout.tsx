@@ -43,7 +43,7 @@ const timelineData: TimelineCardData[] = [
   {
     cardNumber: 2,
     cardHeading: "Registration Ends",
-    cardLine1: "Registration closes on February 5, 2026, at 11:59 PM IST.",
+    cardLine1: "Registration closes on March 25, 2026, at 11:59 PM IST.",
     cardLine2: "Don't miss your chance to be part of this incredible event!",
     position: "left",
     yPosition: { base: 670, xs: 630, sm: 710, md: 700, lg: 720, xl: 680 },
@@ -93,7 +93,7 @@ const timelineData: TimelineCardData[] = [
   {
     cardNumber: 5,
     cardHeading: "Results Announced",
-    cardLine1: "Winners will be announced at the closing ceremony on February 17, 2026.",
+    cardLine1: "Winners will be announced at the closing ceremony on April 11th , 2026.",
     cardLine2: "Exciting prizes and recognition awaits the top teams!",
     position: "right",
     yPosition: { base: 2100, xs: 2100, sm: 2100, md: 2100, lg: 2100, xl: 2200 },
